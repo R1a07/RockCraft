@@ -3,7 +3,7 @@
   font-size: var(--font-size-button);
   font-weight: var(--font-weight-bold);
   color: var(--color-white);
-  background: linear-gradient(45deg, var(--color-accent), #ff6b35, var(--color-accent));
+  background: var(--gradient-accent);
   background-size: 200% 200%;
   background-position: left center; /* 初期は左寄せ */
   padding: 10px 20px;
@@ -23,7 +23,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    background: var(--gradient-sheen);
     animation: lightSweep 2s linear infinite;
     z-index: 1;
   }

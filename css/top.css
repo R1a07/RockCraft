@@ -10,8 +10,12 @@
   --color-gray: #333333;
   --color-white-sub: #f4f5f7;
   --color-accent: #ffa500;
+  --color-accent-secondary: #ff6b35;
   --color-accent-hover: #e6940a;
   --color-accent-usume: #fff6ea;
+  /* Reusable gradients */
+  --gradient-accent: linear-gradient(45deg, var(--color-accent), var(--color-accent-secondary), var(--color-accent));
+  --gradient-sheen: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
   --padding-all: 30px;
   --margin-top: 15px;
   --font-size-h1: 64px;
@@ -24,6 +28,14 @@
   --font-size-footer: 14px;
   --font-size-price: 40px;
   --font-size-yen: 16px;
+}
+
+/* Utility: グラデーションテキスト */
+.gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* オーバースクロールなくす */
@@ -264,6 +276,31 @@ main {
         border-radius: 10px;
         background-color: #333333;
         margin-top: var(--margin-top);
+      }
+    }
+  }
+
+  section.access {
+    background-color: var(--color-white-sub);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    iframe {
+      margin-top: var(--margin-top);
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    p {
+      margin-top: var(--margin-top);
+      font-size: var(--font-size-p1);
+
+      span {
+        font-size: calc(var(--font-size-p1) * 2);
       }
     }
   }
