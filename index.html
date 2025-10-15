@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/button.css">
+  <link rel="stylesheet" href="css/top.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <title>RockCraft</title>
+</head>
+<body class="top">
+  <header>
+    <div class="header-inner">
+      <img src="img/logo.webp" alt="RockCraftのロゴ" class="header-logo">
+      <nav>
+        <ul>
+          <li><a href="">ホーム</a></li>
+          <li><a href="">料金</a></li>
+          <li><a href="">ご利用案内</a></li>
+          <li><a href="">クライミングについて</a></li>
+          <li><a href="">Jr教室・レッスン</a></li>
+          <li><a href="">アクセス</a></li>
+          <li><a href="">ご予約</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger-menu">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="first-view">
+      <div class="first-view-content">
+        <h1>Rock Craft</h1>
+        <p>川越で楽しむボルダリング！<br>初心者大歓迎！！</p>
+        <input type="button" class="button" value="体験予約はこちら" onclick="location.href='reservation.html'">
+      </div>
+    </section>
+
+    <section class="price">
+      <h2>料金</h2>
+      <div class="price-inner">
+        <div class="price-inner-in">
+          <div class="price-admission">
+            <h3>入会金</h3>
+            <p>初回のみ</p>
+          </div>
+          <p class="price">1,200<span class="yen">円</span></p>
+        </div>
+        <div class="price-inner-in">
+          <div class="price-onedaygeneral">
+            <h3>利用料</h3>
+            <p>一日・一般</p>
+          </div>
+          <p class="price">2,000<span class="yen">円</span></p>
+        </div>
+        <div class="price-inner-in price-inner-in2">
+          <h3>レンタル料</h3>
+          <ul class="rental-list">
+            <li>
+              <span class="rental-label">シューズ</span>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="rental-amount">400<span class="yen">円</span></span>
+            </li>
+            <li>
+              <span class="rental-label">滑り止め</span>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="rental-amount">100<span class="yen">円</span></span>
+            </li>
+          </ul>
+          <p class="rental-note" aria-hidden="true">…など、他にもご用意しています</p>
+        </div>
+      </div>
+      <input type="button" class="button" value="料金を詳しく見る" onclick="location.href='price.html'">
+    </section>
+
+    <section class="notice">
+      <h2>お知らせ</h2>
+      <div class="notice-inner">
+        <div class="notice-content">2025.10.12</div>
+        <div class="notice-content">2025.10.13</div>
+        <div class="notice-content">2025.10.14</div>
+      </div>
+      <input type="button" class="button" value="お知らせを詳しく見る" onclick="location.href='notice.html'">
+    </section>
+
+    <section class="features">
+      <h2>特徴</h2>
+      <div class="features-inner">
+        <div class="features-content"></div>
+        <div class="features-content"></div>
+        <div class="features-content"></div>
+      </div>
+      <input type="button" class="button" value="特徴を詳しく見る" onclick="location.href='features.html'">
+    </section>
+  </main>
+
+  <footer>
+    <p>©RockCraft</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="js/top.js"></script>
+</body>
+</html>

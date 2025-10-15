@@ -1,0 +1,48 @@
+/* Button Styles */
+.button {
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  background: linear-gradient(45deg, var(--color-accent), #ff6b35, var(--color-accent));
+  background-size: 200% 200%;
+  background-position: left center; /* 初期は左寄せ */
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-position 0.8s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: lightSweep 2s linear infinite;
+    z-index: 1;
+  }
+  
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-position: right center; /* ホバーで右へ滑らかにずらす */
+  }
+}
+
+/* Button Animations */
+@keyframes lightSweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
