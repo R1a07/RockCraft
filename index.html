@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
+  <meta name="format-detection" content="telephone=no, address=no, email=no"><!--電話番号、住所、メールアドレスの自動検出を無効化-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,20 +18,19 @@
 <body class="top">
   <header>
     <div class="header-inner">
-      <img src="img/logo.webp" alt="RockCraftのロゴ" class="header-logo">
+      <a href="index.html"><img src="img/logo.webp" alt="RockCraftのロゴ" class="header-logo"></a>
       <nav>
         <ul>
-          <li><a href="">ホーム</a></li>
-          <li><a href="">料金</a></li>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="price.html">料金</a></li>
           <li><a href="">ご利用案内</a></li>
           <li><a href="">クライミングについて</a></li>
           <li><a href="">Jr教室・レッスン</a></li>
           <li><a href="">アクセス</a></li>
-          <li><a href="">ご予約</a></li>
+          <li><a href="reservation.html">ご予約</a></li>
         </ul>
       </nav>
-      <div class="hamburger-menu">
-        <div class="hamburger-line"></div>
+      <div class="hamburger-menu" onclick="HamburgerClick = 'true'">
         <div class="hamburger-line"></div>
         <div class="hamburger-line"></div>
       </div>
@@ -109,6 +109,18 @@
       <div class="walk-container">
         <p>本川越駅より徒歩　約 <span class="gradient-text">6</span> 分</p>
         <p>川越駅より徒歩　　約 <span class="gradient-text">7</span> 分</p>
+      </div>
+    </section>
+
+    <section class="time">
+      <h2>営業時間</h2>
+      <div class="time-inner">
+        <h3>平日(火曜除く)</h3>
+        <p>13:00 ~ 22:30</p>
+        <h3>休日</h3>
+        <p>9:30 ~ 20:00</p>
+        <h3>定休日</h3>
+        <p>火曜日</p>
       </div>
     </section>
   </main>
