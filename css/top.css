@@ -298,6 +298,7 @@ main {
     p {
       margin-top: var(--margin-top);
       font-size: var(--font-size-p1);
+      text-decoration: none;
 
       span {
         font-size: calc(var(--font-size-p1) * 2);
