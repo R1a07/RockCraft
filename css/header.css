@@ -32,7 +32,7 @@ header {
         left: 0;
         width: 100vw;
         height: calc(100vh - 120px);
-        z-index: 998;
+        z-index: 999;
         background-color: var(--color-white);
         transform: translateY(100%);
         visibility: hidden;
@@ -90,6 +90,13 @@ header {
         }
       }
     }
+  }
+
+  /* メニューが開いている時の共通スタイル */
+  &.menu-open {
+    /* 影はbody::beforeで描画するため無効化 */
+    box-shadow: none;
+    z-index: 1001;
   }
 }
 
@@ -188,7 +195,9 @@ body.top header {
   /* navが開いている時は背景色を表示 */
   &.menu-open {
     background-color: var(--color-white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* 影はbody::beforeで描画するため無効化 */
+    box-shadow: none;
+    transition: all 0.3s ease;
     
     div.header-inner {
       .hamburger-line {
@@ -212,6 +221,25 @@ body.page header {
       background-color: var(--color-gray);
     }
   }
+
+  /* メニューが開いている時もbox-shadowを維持 */
+  &.menu-open {
+    /* 影はbody::beforeで描画するため無効化 */
+    box-shadow: none;
+  }
+}
+
+/* メニュー開時の固定シャドウ（ヘッダーの直下、navの上） */
+body.menu-open::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 120px; /* headerの高さ */
+  height: 12px;
+  pointer-events: none;
+  z-index: 1000; /* header(1001)の下、nav(999)の上 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0));
 }
 
 /* メニューが開いている時はfirst-viewを隠す */
