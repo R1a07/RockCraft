@@ -28,7 +28,8 @@
   --font-size-footer: 14px;
   --font-size-price: 40px;
   --font-size-yen: 16px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --shadow-sharp: 4px 4px 0px rgba(0, 0, 0, 0.3);
 }
 
 /* Utility: グラデーションテキスト */
@@ -150,7 +151,6 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
-      box-shadow: var(--shadow);
 
       .price-inner-in {
         width: calc(100% - (40px + 40px));
@@ -278,7 +278,7 @@ main {
         border-radius: 10px;
         background-color: #333333;
         margin-top: var(--margin-top);
-        box-shadow: var(--shadow);
+        /* box-shadow: var(--shadow); */
       }
     }
   }
@@ -295,7 +295,7 @@ main {
       width: 100%;
       height: 300px;
       border-radius: 10px;
-      box-shadow: var(--shadow);
+      /* box-shadow: var(--shadow); */
     }
 
     p {
@@ -321,7 +321,6 @@ main {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
-      box-shadow: var(--shadow);
 
       * {
         /* margin-top: calc(var(--margin-top) / 2); */
