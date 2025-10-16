@@ -79,8 +79,13 @@ header {
           transform-origin: center;
         }
 
-        &.closing {
-          animation: hamburger-close 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards !important;
+        &.closing:first-child {
+          animation: hamburger1-close 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards !important;
+          transform-origin: center !important;
+        }
+
+        &.closing:last-child {
+          animation: hamburger2-close 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards !important;
           transform-origin: center !important;
         }
       }
@@ -112,15 +117,27 @@ header {
   }
 }
 
-@keyframes hamburger-close {
+@keyframes hamburger1-close {
   0% {
-    transform: scale(1.2) rotate(45deg);
+    transform: translateY(4.5px) rotate(20deg);
   }
   50% {
-    transform: scale(0.8) rotate(22deg);
+    transform: translateY(4.5px);
   }
   100% {
-    transform: scale(1) rotate(0deg);
+    transform: translateY(0);
+  }
+}
+
+@keyframes hamburger2-close {
+  0% {
+    transform: translateY(-4.5px) rotate(-20deg);
+  }
+  50% {
+    transform: translateY(-4.5px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
