@@ -76,7 +76,7 @@ main {
   }
 
   section.first-view {
-    height: 100vh;
+    height: 100dvh;
     padding: 0;
 
     &::before {
