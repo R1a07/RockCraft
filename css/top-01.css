@@ -1,35 +1,55 @@
 /* 変数 */
 :root {
+  /* フォント */
   --font-primary: 'Poppins', sans-serif;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --color-white: #fff;
-  --color-gray: #333333;
-  --color-white-sub: #f4f5f7;
-  --color-accent: #ffa500;
-  --color-accent-secondary: #ff6b35;
-  --color-accent-hover: #e6940a;
-  --color-accent-usume: #fff6ea;
-  /* Reusable gradients */
+  /* カラー */
+  --color-white: oklch(1 0 0);
+  --color-gray: oklch(0.3211 0 0);
+  --color-white-sub: oklch(0.97 0.0029 264.54);
+  --color-accent: oklch(0.7927 0.171 70.67);
+  --color-accent-secondary: oklch(0.7045 0.1926 39.23);
+  --color-accent-hover: oklch(0.7327 0.1569 70.04);
+  --color-accent-usume: oklch(0.9769 0.0186 75.33);
+  /* グラデーション */
   --gradient-accent: linear-gradient(45deg, var(--color-accent), var(--color-accent-secondary), var(--color-accent));
   --gradient-sheen: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  /* パディング */
   --padding-all: 30px;
+  /* マージン */
   --margin-top: 15px;
-  --font-size-h1: 64px;
-  --font-size-h2: 32px;
-  --font-size-h3: 26px;
-  --font-size-h4: 18px;
-  --font-size-p1: 20px;
-  --font-size-p2: 12px;
+  /* フォントサイズ */
+  --font-size-h1: 3.815rem;
+  --font-size-h2: 3.052rem;
+  --font-size-h3: 2.441rem;
+  --font-size-h4: 1.953rem;
+  --font-size-p: 1rem;
+  --font-size-small1: 0.8rem;
+  --font-size-small2: 0.64rem;
   --font-size-button: 16px;
   --font-size-footer: 14px;
   --font-size-price: 40px;
   --font-size-yen: 16px;
-  --shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  --shadow-sharp: 4px 4px 0px rgba(0, 0, 0, 0.3);
+  /* シャドウ */
+  --shadow-s:
+  inset 0 1px 2px #ffffff30,/* top highlight */
+  0 1px 2px #00000030,/* dark shadow */
+  0 2px 4px #00000015;/* soft shadow */
+  --shadow-m:
+  inset 0 1px 2px #ffffff50,/* top highlight */
+  0 2px 4px #00000030,/* dark shadow */
+  0 4px 8px #00000015;/* soft shadow */
+  --shadow-l:
+  inset 0 1px 2px #ffffff70,/* top highlight */
+  0 4px 6px #00000030,/* dark shadow */
+  0 6px 10px #00000015;/* soft shadow */
+  /* ボーダー半径 */
+  --border-radius-s: 4px;
+  --border-radius-m: 8px;
 }
 
 /* Utility: グラデーションテキスト */
@@ -45,6 +65,7 @@ html, body {
   overflow-x: hidden;
   overscroll-behavior: none;
   -webkit-overflow-scrolling: touch;
+  font-size: 16px;
 }
 
 * {
@@ -135,6 +156,13 @@ main {
     }
   }
 
+  section.beginner {
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   section.price {
     background-color: var(--color-white);
     display: flex;
@@ -147,7 +175,7 @@ main {
       background: var(--color-accent-usume);
       margin-top: var(--margin-top);
       padding-bottom: 40px;
-      border-radius: 10px;
+      border-radius: var(--border-radius-m);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -248,7 +276,7 @@ main {
       height: 320px;
       margin-top: var(--margin-top);
       /* background-color: red; */
-      border-radius: 10px;
+      border-radius: var(--border-radius-m);
       display: grid;
       gap: 5px;
 
@@ -256,7 +284,7 @@ main {
         width: 100%;
         height: 1fr;
         background-color: var(--color-white-sub);
-        border-radius: 10px;
+        border-radius: var(--border-radius-m);
       }
     }
   }
@@ -275,10 +303,9 @@ main {
       .features-content {
         width: 100%;
         height: 300px;
-        border-radius: 10px;
+        border-radius: var(--border-radius-m);
         background-color: #333333;
         margin-top: var(--margin-top);
-        /* box-shadow: var(--shadow); */
       }
     }
   }
@@ -294,8 +321,7 @@ main {
       margin-top: var(--margin-top);
       width: 100%;
       height: 300px;
-      border-radius: 10px;
-      /* box-shadow: var(--shadow); */
+      border-radius: var(--border-radius-m);
     }
 
     p {
@@ -316,7 +342,7 @@ main {
       height: fit-content;
       margin-top: var(--margin-top);
       background-color: var(--color-white);
-      border-radius: 10px;
+      border-radius: var(--border-radius-m);
       padding: 20px 30px;
       display: grid;
       grid-template-columns: 1fr 1fr;

@@ -66,7 +66,7 @@ header {
         flex-direction: column;
         width: 30px;
         height: 1px;
-        border-radius: 5px;
+        border-radius: var(--border-radius-s);
         background-color: var(--color-white);
 
         &.active:first-child {

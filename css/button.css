@@ -7,7 +7,7 @@
   background-size: 200% 200%;
   background-position: left center; /* 初期は左寄せ */
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: var(--border-radius-m);
   border: none;
   outline: none;
   cursor: pointer;
@@ -15,7 +15,7 @@
   margin-top: 20px;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-s);
   
   &::before {
     content: '';

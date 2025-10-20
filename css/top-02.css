@@ -1,0 +1,366 @@
+/* 変数 */
+:root {
+  /* フォント */
+  --font-primary: 'Poppins', sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  /* カラー */
+  --color-white: oklch(1 0 0);
+  --color-gray: oklch(0.3211 0 0);
+  --color-white-sub: oklch(0.97 0.0029 264.54);
+  --color-accent: oklch(0.7927 0.171 70.67);
+  --color-accent-secondary: oklch(0.7045 0.1926 39.23);
+  --color-accent-hover: oklch(0.7327 0.1569 70.04);
+  --color-accent-usume: oklch(0.9769 0.0186 75.33);
+  /* グラデーション */
+  --gradient-accent: linear-gradient(45deg, var(--color-accent), var(--color-accent-secondary), var(--color-accent));
+  --gradient-sheen: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  /* パディング */
+  --padding-all: 30px;
+  /* マージン */
+  --margin-top: 15px;
+  /* フォントサイズ */
+  --font-size-h1: 3.815rem;
+  --font-size-h2: 3.052rem;
+  --font-size-h3: 2.441rem;
+  --font-size-h4: 1.953rem;
+  --font-size-p: 1rem;
+  --font-size-small1: 0.8rem;
+  --font-size-small2: 0.64rem;
+  --font-size-button: 16px;
+  --font-size-footer: 14px;
+  --font-size-price: 40px;
+  --font-size-yen: 16px;
+  /* シャドウ */
+  --shadow-s:
+  inset 0 1px 2px #ffffff30,/* top highlight */
+  0 1px 2px #00000030,/* dark shadow */
+  0 2px 4px #00000015;/* soft shadow */
+  --shadow-m:
+  inset 0 1px 2px #ffffff50,/* top highlight */
+  0 2px 4px #00000030,/* dark shadow */
+  0 4px 8px #00000015;/* soft shadow */
+  --shadow-l:
+  inset 0 1px 2px #ffffff70,/* top highlight */
+  0 4px 6px #00000030,/* dark shadow */
+  0 6px 10px #00000015;/* soft shadow */
+  /* ボーダー半径 */
+  --border-radius-s: 4px;
+  --border-radius-m: 8px;
+}
+
+/* Utility: グラデーションテキスト */
+.gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* オーバースクロールなくす */
+html, body {
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+  font-size: 16px;
+}
+
+* {
+  font-family: var(--font-primary);
+}
+
+main {
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  section {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    padding: 60px var(--padding-all) 60px;
+
+    h2 {
+      font-size: var(--font-size-h2);
+      text-align: center;
+    }
+
+    input {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  }
+
+  section.first-view {
+    height: 100svh;
+    padding: 0;
+
+    &::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100svh;
+      background-image: url('../img/wall.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+
+    &::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100svh;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: -1;
+    }
+
+    .first-view-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100svh;
+      position: relative;
+      z-index: 1;
+      padding-left: var(--padding-all);
+
+      h1 {
+        font-size: var(--font-size-h1);
+        color: var(--color-white);
+        text-align: left;
+        letter-spacing: 2px;
+      }
+
+      p {
+        font-size: var(--font-size-p1);
+        color: var(--color-white);
+        text-align: left;
+        margin: 0;
+      }
+
+      input {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  section.beginner {
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section.price {
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+
+
+    .price-inner {
+      width: calc(100vw - (30px + 30px));
+      height: fit-content;
+      background: var(--color-accent-usume);
+      margin-top: var(--margin-top);
+      padding-bottom: 40px;
+      border-radius: var(--border-radius-m);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .price-inner-in {
+        width: calc(100% - (40px + 40px));
+        height: fit-content;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .price-admission, .price-onedaygeneral {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+
+        h3 {
+          font-size: var(--font-size-h3);
+        }
+
+        p {
+          font-size: var(--font-size-p2);
+          color: var(--color-gray);
+
+          &.price {
+            font-size: var(--font-size-price);
+            transform: translateY(-4px);
+          }
+        }
+        span.yen {
+          font-size: var(--font-size-yen);
+        }
+      }
+
+      .price-inner-in2 {
+        display: grid;
+        grid-template-columns: max-content 1fr auto; /* 見出し / ドット / 金額列に合わせる */
+        align-items: start;
+        row-gap: 10px;
+
+        h3 {
+          grid-column: 1 / 4; /* 見出しは全幅に */
+          font-size: var(--font-size-h3);
+        }
+
+        .rental-list {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 0 16px; /* インデント強め */
+          grid-column: 1 / 4; /* リストも同じグリッド上に */
+          display: grid;
+          grid-template-columns: max-content 1fr auto; /* ラベル / ドット / 金額 */
+          row-gap: 8px;
+
+          li {
+            display: contents; /* 各行を3セルに展開 */
+
+            .rental-label {
+              grid-column: 1;
+              font-size: calc(var(--font-size-h3) * 0.8);
+              text-align: right; /* ラベルの右端をドットの左端に揃える */
+              padding-left: 28px; /* インデント強め */
+            }
+
+
+            .rental-amount {
+              grid-column: 3;
+              font-size: calc(var(--font-size-h3) * 0.8);
+              text-align: right;
+
+              .yen {
+                font-size: calc(var(--font-size-yen) * 0.8);
+              }
+            }
+          }
+        }
+
+        .rental-note {
+          grid-column: 1 / 4;
+          margin-left: 16px; /* リストと同じ開始位置に寄せる */
+          padding-left: 28px; /* ラベルと同じインデント感 */
+          font-size: calc(var(--font-size-p2) * 0.9);
+          color: var(--color-gray);
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+
+  section.notice {
+    background-color: var(--color-white);
+
+    .notice-inner {
+      width: 100%;
+      height: 320px;
+      margin-top: var(--margin-top);
+      /* background-color: red; */
+      border-radius: var(--border-radius-m);
+      display: grid;
+      gap: 5px;
+
+      .notice-content {
+        width: 100%;
+        height: 1fr;
+        background-color: var(--color-white-sub);
+        border-radius: var(--border-radius-m);
+      }
+    }
+  }
+
+  section.features {
+    background-color: var(--color-accent-usume);
+
+    .features-inner {
+      width: 100%;
+      height: fit-content;
+      display: grid;
+      gap: 50px;
+      /* background: #7c7c7c; */
+      /* border-radius: 10px; */
+
+      .features-content {
+        width: 100%;
+        height: 300px;
+        border-radius: var(--border-radius-m);
+        background-color: #333333;
+        margin-top: var(--margin-top);
+      }
+    }
+  }
+
+  section.access {
+    background-color: var(--color-white-sub);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    iframe {
+      margin-top: var(--margin-top);
+      width: 100%;
+      height: 300px;
+      border-radius: var(--border-radius-m);
+    }
+
+    p {
+      margin-top: var(--margin-top);
+      font-size: var(--font-size-p1);
+
+      span {
+        font-size: calc(var(--font-size-p1) * 2);
+      }
+    }
+  }
+
+  section.time {
+    background-color: var(--color-white-sub);
+
+    .time-inner {
+      width: 100%;
+      height: fit-content;
+      margin-top: var(--margin-top);
+      background-color: var(--color-white);
+      border-radius: var(--border-radius-m);
+      padding: 20px 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+
+      * {
+        /* margin-top: calc(var(--margin-top) / 2); */
+        /* background-color: #ff6b35; */
+        padding: 10px 0;
+      }
+
+      h3 {
+        text-align: left;
+      }
+
+      p {
+        text-align: right;
+      }
+    }
+  }
+}
