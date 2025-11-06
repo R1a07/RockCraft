@@ -19,6 +19,8 @@
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-button);
+  display: inline-block;
+  vertical-align: top;
 
   &:hover {
     background-position: 100% center; /* ホバーで右へ滑らかにずらす */
@@ -36,6 +38,7 @@
   margin-top: var(--margin-top-button);
   margin-bottom: var(--margin-bottom-button);
   margin-left: var(--margin-left-button);
+  vertical-align: top;
   background: linear-gradient(to bottom right, var(--color-main), var(--color-sub));
   border-radius: calc(var(--border-radius-m) + 2px);
   box-shadow: var(--shadow-button);
