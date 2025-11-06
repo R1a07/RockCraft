@@ -47,6 +47,26 @@
   box-shadow: var(--shadow-button);
   transition: box-shadow 0.2s ease;
 
+  &.button-instagram {
+    background: linear-gradient(to bottom right, var(--color-accent), var(--color-accent-dark));
+
+    .button-2.button-instagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &::before {
+      background: linear-gradient(to bottom right, var(--color-accent-dark), var(--color-accent));
+    }
+  }
+
   &::before {
     content: '';
     position: absolute;

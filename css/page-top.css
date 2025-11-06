@@ -16,7 +16,9 @@
   /* カラー */
   --color-main: oklch(0.7927 0.171 70.67);
   --color-sub: oklch(0.7334 0.185189 53.4055);
-  --color-accent: oklch(0.6713 0.2031 17.82);
+  --color-accent: oklch(0.6922 0.1857 15.94);
+  --color-accent-light: oklch(0.7579 0.1386 13.14);
+  --color-accent-dark: oklch(0.6455 0.2234 20.15);
   --color-base: oklch(0.9761 0.0141 74.43);
   --color-neutral-1: oklch(0.1591 0 0);
   --color-neutral-2: oklch(0.5103 0 0);
