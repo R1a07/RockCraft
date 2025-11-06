@@ -2,9 +2,9 @@
 .button-1 {
   font-size: var(--font-size-p2);
   font-weight: var(--font-weight-bold);
-  color: #ffffff;
+  color: var(--color-neutral-6);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(90deg, var(--color-main), var(--color-sub1), #F96611);
+  background: linear-gradient(90deg, var(--color-main), var(--color-sub), #F96611);
   background-size: 200% 200%;
   background-position: 0% center;
   padding: 12px 32px;
@@ -36,15 +36,57 @@
   margin-top: var(--margin-top-button);
   margin-bottom: var(--margin-bottom-button);
   margin-left: var(--margin-left-button);
-  background: linear-gradient(to bottom right, var(--color-main), var(--color-sub1));
+  background: linear-gradient(to bottom right, var(--color-main), var(--color-sub));
   border-radius: calc(var(--border-radius-m) + 2px);
   box-shadow: var(--shadow-button);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-button);
+  transition: box-shadow 0.2s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom right, var(--color-sub), var(--color-main));
+    opacity: 0;
+    transition: opacity 2s ease;
+    border-radius: calc(var(--border-radius-m) + 2px);
+    z-index: 0;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &:active {
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.3); /* クリック時に外枠の影を消す */
+  }
+
+  /* 内側白フィルム（レイアウト不変で枠厚を演出） */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 2px; /* 既定の内側白面の厚み */
+    border-radius: var(--border-radius-m);
+    background: var(--color-neutral-6);
+    transition: inset 0.3s ease, border-radius 0.3s ease; /* レイアウトを変えず厚みのみ演出 */
+    z-index: 1; /* グラデより上、テキストより下に配置 */
+  }
+
+  &:hover::after {
+    inset: 4px; /* 白面を内側に収縮 → 枠が内側に広がる */
+    border-radius: calc(var(--border-radius-m) - 2px); /* insetの変化に合わせて調整 */
+  }
 
   .button-2 {
     font-size: var(--font-size-p2);
     font-weight: var(--font-weight-regular);
-    color: var(--color-neutral-5);
-    background: var(--color-white);
+    color: var(--color-neutral-1);
+    background: transparent; /* 白面は親の::afterで描画 */
     padding: calc(12px - 2px) calc(32px - 2px); /* 外側の2pxを考慮して、合計12px 32pxになるように調整 */
     border-radius: var(--border-radius-m);/* 8px */
     border: none;
@@ -53,5 +95,11 @@
     overflow: hidden;
     box-shadow: var(--shadow-s);
     display: block;
+    z-index: 2; /* テキストを::afterの上に */
+    transition: box-shadow 0.2s ease;
+
+    &:active {
+      box-shadow: 0 0 0px rgba(0, 0, 0, 0.3); /* 影を消す */
+    }
   }
 }

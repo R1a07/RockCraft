@@ -15,15 +15,17 @@
   --font-size-p3: 1rem;
   /* カラー */
   --color-main: oklch(0.7927 0.171 70.67);
-  --color-sub1: oklch(0.7334 0.185189 53.4055);
+  --color-sub: oklch(0.7334 0.185189 53.4055);
   --color-accent: oklch(0.6713 0.2031 17.82);
   --color-base: oklch(0.9761 0.0141 74.43);
-  --color-neutral-2: oklch(0.9821 0 0);
-  --color-neutral-4: oklch(0.5068 0 0);
-  --color-neutral-5: oklch(0.2645 0 0);
-  --color-white: #ffffff;
+  --color-neutral-1: oklch(0.1591 0 0);
+  --color-neutral-2: oklch(0.5103 0 0);
+  --color-neutral-3: oklch(0.683 0 0);
+  --color-neutral-4: oklch(0.9249 0 0);
+  --color-neutral-5: oklch(0.9612 0 0);
+  --color-neutral-6: #ffffff;
   /* グラデーション */
-  --gradient-1: linear-gradient(45deg, var(--color-main), var(--color-sub1));
+  --gradient-1: linear-gradient(45deg, var(--color-main), var(--color-sub));
   /* パディング */
   --padding-top: 28px;
   --padding-right: 28px;

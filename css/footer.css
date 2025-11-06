@@ -8,11 +8,11 @@ footer {
   z-index: 1;
   width: 100%;
   height: 60px;
-  background: linear-gradient(90deg, var(--color-main), var(--color-sub1));
+  background: linear-gradient(90deg, var(--color-main), var(--color-sub));
 
   p {
     font-family: var(--font-primary);
     font-size: var(--font-size-footer);
-    color: var(--color-white);
+    color: var(--color-neutral-12);
   }
 }
