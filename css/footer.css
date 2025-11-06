@@ -7,8 +7,8 @@ footer {
   align-items: center;
   z-index: 1;
   width: 100%;
-  height: 100px;
-  background-color: var(--color-accent);
+  height: 60px;
+  background: linear-gradient(90deg, var(--color-main), var(--color-sub1));
 
   p {
     font-family: var(--font-primary);

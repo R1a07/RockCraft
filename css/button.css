@@ -1,54 +1,57 @@
 /* Button Styles */
-.button {
-  font-size: var(--font-size-button);
+.button-1 {
+  font-size: var(--font-size-p2);
   font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  background: var(--gradient-accent);
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(90deg, var(--color-main), var(--color-sub1), #F96611);
   background-size: 200% 200%;
-  background-position: left center; /* 初期は左寄せ */
-  padding: 10px 20px;
+  background-position: 0% center;
+  padding: 12px 32px;
   border-radius: var(--border-radius-m);
   border: none;
   outline: none;
   cursor: pointer;
   transition: background-position 0.8s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  margin-top: 20px;
+  margin-top: var(--margin-top-button);
+  margin-bottom: var(--margin-bottom-button);
+  margin-left: var(--margin-left);
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-s);
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-sheen);
-    animation: lightSweep 2s linear infinite;
-    z-index: 1;
-  }
-  
-  &:focus {
-    outline: none;
-  }
+  box-shadow: var(--shadow-button);
 
   &:hover {
-    background-position: right center; /* ホバーで右へ滑らかにずらす */
+    background-position: 100% center; /* ホバーで右へ滑らかにずらす */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   &:active {
-    transform: translate(4px, 4px); /* クリック時に右下に移動して影に重なる */
     box-shadow: 0 0 0px rgba(0, 0, 0, 0.3); /* 影を消す */
   }
 }
 
-/* Button Animations */
-@keyframes lightSweep {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
+.button-2-outer {
+  display: inline-block;
+  padding: 2px; /* これがボーダーの幅になる */
+  margin-top: var(--margin-top-button);
+  margin-bottom: var(--margin-bottom-button);
+  margin-left: var(--margin-left-button);
+  background: linear-gradient(to bottom right, var(--color-main), var(--color-sub1));
+  border-radius: calc(var(--border-radius-m) + 2px);
+  box-shadow: var(--shadow-button);
+
+  .button-2 {
+    font-size: var(--font-size-p2);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-neutral-5);
+    background: var(--color-white);
+    padding: calc(12px - 2px) calc(32px - 2px); /* 外側の2pxを考慮して、合計12px 32pxになるように調整 */
+    border-radius: var(--border-radius-m);/* 8px */
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-s);
+    display: block;
   }
 }
