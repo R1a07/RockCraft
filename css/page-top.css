@@ -78,6 +78,7 @@ h1 {
 
 h2 {
   font-size: var(--font-size-h2);
+  margin-left: var(--margin-left);
 }
 
 h3 {
