@@ -12,7 +12,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  transition: background-position 0.8s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background-position 0.8s ease, transform 0.2s ease, box-shadow 0.2s ease, scale 0.3s ease;
   margin-top: var(--margin-top-button);
   margin-bottom: var(--margin-bottom-button);
   margin-left: var(--margin-left);
@@ -25,6 +25,7 @@
   &:hover {
     background-position: 100% center; /* ホバーで右へ滑らかにずらす */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    scale: 1.01;
   }
 
   &:active {
@@ -123,6 +124,50 @@
 
     &:active {
       box-shadow: 0 0 0px rgba(0, 0, 0, 0.3); /* 影を消す */
+    }
+  }
+}
+
+.button-top {
+  width: 92px;
+  height: 92px;
+  background: linear-gradient(var(--color-main), var(--color-sub));
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.5s ease;
+  position: sticky;
+  bottom: 48px;
+  right: 48px;
+
+  svg {
+    width: 24px;
+    transition: all 0.3s ease;
+    fill: var(--color-neutral-1);
+  }
+
+  p {
+    color: var(--color-neutral-6);
+    transition: all 0.8s ease;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    transition: all 0.5s ease;
+
+    svg {
+      transform: translateY(-4px);
+      transition: all 0.5s ease;
+    }
+
+    p {
+      transform: translateY(-2px);
+      transition: all 0.8s ease;
     }
   }
 }
